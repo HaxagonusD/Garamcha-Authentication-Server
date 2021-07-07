@@ -111,9 +111,7 @@ app.get("/logout", function (req, res) {
   res.redirect("/");
 });
 
-app.get("/", (req, res) => {
-  res.send("garamcha authentication server");
-});
+
 
 app.listen(process.env.PORT, () => {
   console.log("listening");
