@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const port = 3000;
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const uri =
@@ -112,6 +111,6 @@ app.get("/logout", function (req, res) {
   res.redirect("/");
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`);
 });
