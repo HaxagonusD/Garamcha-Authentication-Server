@@ -96,14 +96,14 @@ app.use(cors());
 app.post("/login", passport.authenticate("local-login"), function (req, res) {
   // If this function gets called, authentication was successful.
   // `req.user` contains the authenticated user.
-  res.json(req.email);
+  res.json(req.user.email);
 });
 
 app.post("/signup", passport.authenticate("local-signup"), function (req, res) {
   // If this function gets called, authentication was successful.
   // `req.user` contains the authenticated user.
 
-  res.json(email);
+  res.json(req.user.email);
 });
 
 app.get("/logout", function (req, res) {
@@ -112,5 +112,5 @@ app.get("/logout", function (req, res) {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(`Example app listening at http://localhost:${process.env.PORT}`);
+  console.log("listening");
 });
