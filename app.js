@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const app = express();
 const port = 3000;
 const passport = require("passport");
@@ -91,6 +92,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.post("/login", passport.authenticate("local-login"), function (req, res) {
   // If this function gets called, authentication was successful.
